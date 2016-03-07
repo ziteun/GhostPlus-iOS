@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   s.vendored_frameworks = ['Frameworks/GhostPlus.framework']
   
   #s.source           = { :http => 'http://developer.ghostplus.com/project/ghostplus_ios/GhostPlus-1.00.tar.gz', :flatten => true }
-  s.source       = { :git => "https://github.com/hmhv/HobjectiveRecord.git", :tag => @version }
+  s.source       = { :git => "https://github.com/vanstudio/GhostPlus-iOS.git", :tag => @version }
   
   s.source_files = []
   s.resources = []
