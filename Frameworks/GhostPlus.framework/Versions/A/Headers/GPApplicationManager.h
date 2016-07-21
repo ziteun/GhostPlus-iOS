@@ -34,13 +34,23 @@
 - (BOOL)isDebugMode;
 
 /** info.plist 스킴에 등록되어 있는 스킴인지 체크
- @param scheme 스킴
+ @param scheme scheme
  */
 - (BOOL)isAppScheme:(NSString *)scheme;
+
+/** info.plist LSApplicationQueriesSchemes에서 scheme 확인
+ @param scheme scheme
+ */
+- (BOOL)isRegisteredCanOpenURLScheme:(NSString *)scheme;
 
 /** 카카오링크 URL 체크
  @param url URL
  */
 - (BOOL)isKakaoLinkURL:(NSURL *)url;
+
+/** 카카오스토리링크 URL 체크
+ @param url URL
+ */
+- (BOOL)isKakaoStoryLinkURL:(NSURL *)url;
 
 @end

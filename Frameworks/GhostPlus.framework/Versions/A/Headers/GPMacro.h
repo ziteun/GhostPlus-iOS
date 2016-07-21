@@ -9,12 +9,6 @@
 #ifndef GhostPlus_GHMacro_h
 #define GhostPlus_GHMacro_h
 
-// Log
-#define GPLog(fmt, ...) if ([GhostPlus useLog]) NSLog((@"%s[Line %d] " fmt), __PRETTY_FUNCTION__, __LINE__, ##__VA_ARGS__);
-#define GPOnlineTrace(fmt, ...) [[GPOnlineTraceManager sharedManager] trace:[NSString stringWithFormat:fmt, ##__VA_ARGS__]];
-#define GPOnlineError(fmt, ...) [[GPOnlineTraceManager sharedManager] error:[NSString stringWithFormat:fmt, ##__VA_ARGS__]];
-#define GPOnlineCrash(fmt, ...) [[GPOnlineTraceManager sharedManager] crash:[NSString stringWithFormat:fmt, ##__VA_ARGS__]];
-
 // OS
 #define IS_OS_6_OR_EARLIER	([[[UIDevice currentDevice] systemVersion] floatValue] < 7.0)
 #define IS_OS_7_OR_EARLIER	([[[UIDevice currentDevice] systemVersion] floatValue] < 8.0)
@@ -27,9 +21,12 @@
 
 // Log
 #define PrintBool(x) (((x) == YES) ? @"YES" : @"NO")
-#define PrintRect(x)	NSStringFromCGRect(x)
-#define PrintPoint(x)	NSStringFromCGPoint(x)
-#define PrintSize(x)	NSStringFromCGSize(x)
+#define PrintRect(x)			NSStringFromCGRect(x)
+#define PrintPoint(x)			NSStringFromCGPoint(x)
+#define PrintSize(x)			NSStringFromCGSize(x)
+#define PrintRange(x)			NSStringFromRange(x)
+#define PrintUIEdgeInsets(x)	NSStringFromUIEdgeInsets(x)
+#define PrintUIOffset(x)		NSStringFromUIOffset(x)
 
 // Math
 #define degreeToRadians(x) (M_PI * x / 180.0)
@@ -45,5 +42,38 @@
 
 // Util
 #define NotiPost(name, obj, userinfo)		[[NSNotificationCenter defaultCenter] postNotificationName:name object:obj userInfo:userinfo]
+
+// Dispatch
+#define gp_dispatch_main_sync_safe(block)\
+	if ([NSThread isMainThread]) {\
+		block();\
+	} else {\
+		dispatch_sync(dispatch_get_main_queue(), block);\
+	}
+
+#define gp_dispatch_main_async_safe(block)\
+	if ([NSThread isMainThread]) {\
+		block();\
+	} else {\
+		dispatch_async(dispatch_get_main_queue(), block);\
+	}
+
+// Google Analytics
+#define GAI_INSTALL()\
+	NSError *configureError;\
+	[[GGLContext sharedInstance] configureWithError:&configureError];\
+	NSAssert(!configureError, @"Error configuring Google services: %@", configureError);\
+	[GAI sharedInstance].trackUncaughtExceptions = YES;
+
+#define GAI_LOGLEVEL(__LOGLEVEL__)\
+	[GAI sharedInstance].logger.logLevel = __LOGLEVEL__;
+
+#define GAI_TRACK_SCREEN(__SCREEN__)\
+	id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];\
+	[tracker set:kGAIScreenName value:__SCREEN__];\
+	[tracker send:[[GAIDictionaryBuilder createScreenView] build]];
+
+#define GAI_TRACK_EVENT(__CATEGORY__, __ACTION__, __LABEL__, __VALUE__)\
+	[[[GAI sharedInstance] defaultTracker] send:[[GAIDictionaryBuilder createEventWithCategory:__CATEGORY__ action:__ACTION__ label:__LABEL__ value:__VALUE__] build]];
 
 #endif

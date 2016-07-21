@@ -15,18 +15,11 @@
  */
 + (UIViewController *)topViewController;
 /**
+ 최상위 present 가능한 뷰컨트롤러
+ */
++ (UIViewController *)topPresentableViewController;
+/**
  보이는 최상위 뷰컨트롤러
  */
 - (UIViewController *)topVisibleViewController;
-/**
- 상태바 아래에 위치하는 NSLayoutConstraint의 Constant 수치 업데이트
- @param constraint 대상 NSLayoutConstraint
- */
-- (void)updateStatusBarUnderViewConstraint:(NSLayoutConstraint *)constraint;
-/**
- 상태바 아래에 위치하는 NSLayoutConstraint의 Constant 수치 업데이트
- @param constraint 대상 NSLayoutConstraint
- @param defaultConstant Constant 수치
- */
-- (void)updateStatusBarUnderViewConstraint:(NSLayoutConstraint *)constraint defaultConstant:(CGFloat)defaultConstant;
 @end

@@ -16,6 +16,11 @@
 + (GPWebViewManager *)sharedManager;
 
 /**
+ 준비 확인
+ */
+- (BOOL)checkPrepare;
+
+/**
  유저에이전트
  */
 - (NSString *)userAgent;
@@ -136,7 +141,7 @@
  @param navigationType 네비게이션 타입
  @return 해당되는 스킴이 없으면 'YES'
  */
-- (BOOL)reviewForKakaoLinkWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType;
+//- (BOOL)reviewForKakaoLinkWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType;
 
 /**
  웹뷰 롱프레스 제스쳐 비활성화

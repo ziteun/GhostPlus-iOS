@@ -11,6 +11,20 @@
 @interface UIImage (GPUtil)
 
 /**
+ 백그라운드에서 이미지 불러오기
+ @param	url			이미지URL
+ @param complete	작업완료시 콜백
+ */
++ (void)loadImageInBackgroundWithURL:(NSURL *)url complete:(void (^)(UIImage *image))complete;
+
+/**
+ 백그라운드에서 이미지 사이즈 불러오기
+ @param	url			이미지URL
+ @param complete	작업완료시 콜백
+ */
++ (void)loadImageSizeInBackgroundWithURL:(NSURL *)url complete:(void (^)(BOOL success, CGSize imageSize))complete;
+
+/**
  이미지 방향을 세로 기준으로
  */
 - (UIImage *)imageByNormalizingOrientation;
@@ -63,5 +77,4 @@
  @param scale 바운딩 안에 꽉차게 할 것인지
  */
 - (UIImage *)imageByResizedToFitInSize:(CGSize)boundingSize scaleIfSmaller:(BOOL)scale;
-
 @end

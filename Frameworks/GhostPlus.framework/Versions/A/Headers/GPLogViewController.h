@@ -10,6 +10,16 @@
 @interface GPLogViewController : UIViewController
 
 /**
+ 로그 보기
+ */
++ (void)show;
+
+/**
+ 로그 숨기기
+ */
++ (void)hide;
+
+/**
  로그 기록 켜기
  */
 + (void)on;
@@ -28,10 +38,5 @@
  오버레이 모드로 보기
  */
 - (void)showOverlay;
-
-/**
- 숨기기
- */
-- (void)hide;
 
 @end

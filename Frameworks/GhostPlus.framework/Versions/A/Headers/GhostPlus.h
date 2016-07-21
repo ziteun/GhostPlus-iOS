@@ -20,23 +20,19 @@
 #import <GhostPlus/GPDeviceManager.h> // required "AVFoundation", "AssetsLibrary"
 #import <GhostPlus/GPFontManager.h>
 #import <GhostPlus/GPNetManager.h>
-#import <GhostPlus/GPOnlineTraceManager.h>
+#import <GhostPlus/GPNetManager+AFNetworking.h>
+#import <GhostPlus/GPAirLogger.h>
 #import <GhostPlus/GPWebViewManager.h>
 
 // Custom UI
 #import <GhostPlus/GPAlert.h>
-#import <GhostPlus/GPNavigationController.h>
-#import <GhostPlus/GPScrollView.h>
-#import <GhostPlus/GPView.h>
-#import <GhostPlus/GPViewController.h>
+#import <GhostPlus/GPAlertController.h>
 
 // Category
 #import <GhostPlus/Base64.h>
 #import <GhostPlus/JSON.h>
-#import <GhostPlus/UIButton+Border.h>
 #import <GhostPlus/UIControl+GPActionBlock.h>
 #import <GhostPlus/UIImage+GPUtil.h>
-#import <GhostPlus/UILabel+GPUtil.h>
 #import <GhostPlus/UIScreen+GPUtil.h>
 #import <GhostPlus/UIView+GPUtil.h>
 #import <GhostPlus/UIViewController+GPUtil.h>
@@ -44,8 +40,9 @@
 #import <GhostPlus/NSString+GPUtil.h>
 #import <GhostPlus/NSURL+GPUtil.h>
 
-// Module
-#import <GhostPlus/GPImagePicker.h>
+// Debug
+#import <GhostPlus/GPLogger.h>
+#import <GhostPlus/GPAirLogger.h>
 #import <GhostPlus/GPLogViewController.h>
 
 // Utils
@@ -53,11 +50,10 @@
 
 // Library
 #import <AFNetworking/AFNetworking.h>
-//#import <GhostPlus/FMDB.h> // required "sqlite3.dylib"
 
 // Constans
-#define GHOSTPLUS_VERSION           @"1.00";
-#define GHOSTPLUS_BUILD_VERSION     @"1";
+#define GHOSTPLUS_VERSION           @"2.00";
+#define GHOSTPLUS_BUILD_VERSION     @"200";
 
 /**
  GhostPlus 메인클래스
@@ -94,12 +90,17 @@
 /** 프레임워크 로깅 사용여부 */
 + (BOOL)useLog;
 
-/** 프레임워크 온라인로깅 사용설정
+/** 프레임워크 에어로깅 사용설정
  @param value flag
  */
-+ (void)setUseOnlineTrace:(BOOL)value;
++ (void)setUseAirLog:(BOOL)value;
 
-/** 프레임워크 온라인로깅 사용여부 */
-+ (BOOL)useOnlineTrace;
+/** 프레임워크 에어로깅 사용여부 */
++ (BOOL)useAirLog;
+
+/**
+ 준비 확인
+ */
++ (void)checkPrepare;
 
 @end

@@ -9,6 +9,8 @@
 #define METHOD_POST	@"POST"
 #define METHOD_GET	@"GET"
 
+@class GPMultipartFormData;
+
 /**
  네트워크 통신 매니저
  */
@@ -18,6 +20,11 @@
  싱글톤 객체
  */
 + (GPNetManager *)sharedManager;
+
+/**
+ 준비 확인
+ */
+- (BOOL)checkPrepare;
 
 /**
  네트워크상태 모니터링 시작
@@ -68,6 +75,29 @@
  */
 - (void)setAllowInvalidCertificates:(BOOL)allow;
 
+/** 네트워크통신 요청 (String)
+ @param url URL
+ @param parameters 변수
+ @param method 메서드
+ @param encoding 인코딩
+ @param success 네트워크통신 성공시 핸들러
+ @param failure 네트워크통신 실패시 핸들러
+ */
+- (void)requestStringWithURL:(NSString *)url parameters:(NSDictionary *)parameters method:(NSString *)method encoding:(NSInteger)encoding success:(void (^)(NSURLSessionDataTask *task, NSString *responseString))success failure:(void (^)(NSURLSessionDataTask *task, NSError *error))failure;
+
+/** 네트워크통신 요청 (String)
+ @param url URL
+ @param parameters 변수
+ @param multipartFormData multipart form 데이터
+ @param method 메서드
+ @param encoding 인코딩
+ @param uploadProgress 네트워크통신 업로드 프로그레스 핸들러
+ @param downloadProgress 네트워크통신 다운로드 프로그레스 핸들러
+ @param success 네트워크통신 성공시 핸들러
+ @param failure 네트워크통신 실패시 핸들러
+ */
+- (void)requestStringWithURL:(NSString *)url parameters:(NSDictionary *)parameters multipartFormData:(NSArray<GPMultipartFormData *> *)multipartFormData method:(NSString *)method encoding:(NSInteger)encoding uploadProgress:(void (^)(NSProgress *progress))uploadProgress downloadProgress:(void (^)(NSProgress *progress))downloadProgress success:(void (^)(NSURLSessionDataTask *task, NSString *responseString))success failure:(void (^)(NSURLSessionDataTask *task, NSError *error))failure;
+
 /** 네트워크통신 요청 (JSON)
  @param url URL
  @param parameters 변수
@@ -76,19 +106,18 @@
  @param success 네트워크통신 성공시 핸들러
  @param failure 네트워크통신 실패시 핸들러
  */
-- (void)requestJSONWithURL:(NSString *)url parameters:(NSDictionary *)parameters method:(NSString *)method encoding:(NSInteger)encoding success:(void (^)(NSDictionary *json))success failure:(void (^)(void))failure;
+- (void)requestJSONWithURL:(NSString *)url parameters:(NSDictionary *)parameters method:(NSString *)method encoding:(NSInteger)encoding success:(void (^)(NSURLSessionDataTask *task, NSDictionary *json))success failure:(void (^)(NSURLSessionDataTask *task, NSError *error))failure;
 
-/** 네트워크통신 요청 (HTML)
- @param url URL
- @param parameters 변수
- @param method 메서드
- @param encoding 인코딩
- @param success 네트워크통신 성공시 핸들러
- @param failure 네트워크통신 실패시 핸들러
- */
-- (void)requestHTMLWithURL:(NSString *)url parameters:(NSDictionary *)parameters method:(NSString *)method encoding:(NSInteger)encoding success:(void (^)(NSString *html))success failure:(void (^)(void))failure;
+// TODO: 개발중
+//- (void)downloadFileWithURL:(NSString *)url;
 
-// 테스트중
-- (void)downloadFileWithURL:(NSString *)url;
+@end
 
+
+@interface GPMultipartFormData : NSObject
+@property (nonatomic, strong) NSData *data;
+@property (nonatomic, strong) NSString *name;
+@property (nonatomic, strong) NSString *fileName;
+@property (nonatomic, strong) NSString *mimeType;
+- (instancetype)initWithData:(NSData *)data name:(NSString *)name fileName:(NSString *)fileName mimeType:(NSString *)mimeType;
 @end
