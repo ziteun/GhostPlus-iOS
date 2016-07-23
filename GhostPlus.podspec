@@ -1,4 +1,4 @@
-@version = "2.00"
+@version = "2.01"
 Pod::Spec.new do |s|
   s.name             = 'GhostPlus'
   s.version          = @version
@@ -27,5 +27,5 @@ Pod::Spec.new do |s|
   
   #s.xcconfig = { 'FRAMEWORK_SEARCH_PATHS' => '"$(PODS_ROOT)/TestGhostPlus"' }
   
-  s.dependency 'AFNetworking', '~> 2.0'
+  s.dependency 'AFNetworking', '~> 3.0'
 end
