@@ -75,6 +75,12 @@
  */
 - (void)setAllowInvalidCertificates:(BOOL)allow;
 
+/** HTTP 프록시 설정
+ @param host	프록시 호스트
+ @param port	프록시 포트
+ */
+- (void)setHTTPProxyWithHost:(NSString *)host port:(NSNumber *)port;
+
 /** 네트워크통신 요청 (String)
  @param url URL
  @param parameters 변수
