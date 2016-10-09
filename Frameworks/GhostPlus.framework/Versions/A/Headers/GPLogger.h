@@ -50,6 +50,8 @@ static GPConsoleColor *consoleTextColorC;
 
 @interface GPLogger : NSObject
 + (void)setColorsEnabled:(BOOL)enable;
++ (void)setUseTTY:(BOOL)value;
++ (void)setUseASL:(BOOL)value;
 + (void)logWithFlag:(GPLogFlag)flag file:(const char *)file function:(const char *)function line:(NSUInteger)line format:(NSString *)format, ...;
 + (void)logWithFlag:(GPLogFlag)flag file:(const char *)file function:(const char *)function line:(NSUInteger)line prefix:(NSString *)prefix message:(NSString *)message;
 @end
