@@ -31,6 +31,7 @@
 // Category
 #import <GhostPlus/Base64.h>
 #import <GhostPlus/JSON.h>
+#import <GhostPlus/UIColor+GPUtil.h>
 #import <GhostPlus/UIControl+GPActionBlock.h>
 #import <GhostPlus/UIImage+GPUtil.h>
 #import <GhostPlus/UIScreen+GPUtil.h>
@@ -52,8 +53,8 @@
 #import <AFNetworking/AFNetworking.h>
 
 // Constans
-#define GHOSTPLUS_VERSION           @"2.07";
-#define GHOSTPLUS_BUILD_VERSION     @"207";
+#define GHOSTPLUS_VERSION           @"2.08";
+#define GHOSTPLUS_BUILD_VERSION     @"208";
 
 /**
  GhostPlus 메인클래스
