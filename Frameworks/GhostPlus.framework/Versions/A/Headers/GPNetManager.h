@@ -89,7 +89,7 @@
  @param success 네트워크통신 성공시 핸들러
  @param failure 네트워크통신 실패시 핸들러
  */
-- (void)requestStringWithURL:(NSString *)url headers:(NSDictionary *)headers parameters:(NSDictionary *)parameters method:(NSString *)method encoding:(NSInteger)encoding success:(void (^)(NSURLSessionDataTask *task, NSString *responseString))success failure:(void (^)(NSURLSessionDataTask *task, NSError *error))failure;
+- (void)requestStringWithURL:(NSString *)url parameters:(NSDictionary *)parameters method:(NSString *)method encoding:(NSInteger)encoding success:(void (^)(NSURLSessionDataTask *task, NSString *responseString))success failure:(void (^)(NSURLSessionDataTask *task, NSError *error))failure;
 
 /** 네트워크통신 요청 (String)
  @param url URL
@@ -102,7 +102,7 @@
  @param success 네트워크통신 성공시 핸들러
  @param failure 네트워크통신 실패시 핸들러
  */
-- (void)requestStringWithURL:(NSString *)url headers:(NSDictionary *)headers parameters:(NSDictionary *)parameters multipartFormData:(NSArray<GPMultipartFormData *> *)multipartFormData method:(NSString *)method encoding:(NSInteger)encoding uploadProgress:(void (^)(NSProgress *progress))uploadProgress downloadProgress:(void (^)(NSProgress *progress))downloadProgress success:(void (^)(NSURLSessionDataTask *task, NSString *responseString))success failure:(void (^)(NSURLSessionDataTask *task, NSError *error))failure;
+- (void)requestStringWithURL:(NSString *)url parameters:(NSDictionary *)parameters multipartFormData:(NSArray<GPMultipartFormData *> *)multipartFormData method:(NSString *)method encoding:(NSInteger)encoding uploadProgress:(void (^)(NSProgress *progress))uploadProgress downloadProgress:(void (^)(NSProgress *progress))downloadProgress success:(void (^)(NSURLSessionDataTask *task, NSString *responseString))success failure:(void (^)(NSURLSessionDataTask *task, NSError *error))failure;
 
 /** 네트워크통신 요청 (JSON)
  @param url URL
@@ -112,7 +112,7 @@
  @param success 네트워크통신 성공시 핸들러
  @param failure 네트워크통신 실패시 핸들러
  */
-- (void)requestJSONWithURL:(NSString *)url headers:(NSDictionary *)headers parameters:(NSDictionary *)parameters method:(NSString *)method encoding:(NSInteger)encoding success:(void (^)(NSURLSessionDataTask *task, NSDictionary *json))success failure:(void (^)(NSURLSessionDataTask *task, NSError *error))failure;
+- (void)requestJSONWithURL:(NSString *)url parameters:(NSDictionary *)parameters method:(NSString *)method encoding:(NSInteger)encoding success:(void (^)(NSURLSessionDataTask *task, NSDictionary *json))success failure:(void (^)(NSURLSessionDataTask *task, NSError *error))failure;
 
 // TODO: 개발중
 //- (void)downloadFileWithURL:(NSString *)url;
