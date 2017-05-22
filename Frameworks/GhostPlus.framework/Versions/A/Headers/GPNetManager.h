@@ -83,7 +83,8 @@
 
 /** 네트워크통신 요청 (String)
  @param url URL
- @param parameters 변수
+ @param headers 헤더 (기본은 nil)
+ @param parameters 변수 (기본은 nil)
  @param method 메서드
  @param encoding 인코딩
  @param success 네트워크통신 성공시 핸들러
@@ -93,7 +94,8 @@
 
 /** 네트워크통신 요청 (String)
  @param url URL
- @param parameters 변수
+ @param headers 헤더 (기본은 nil)
+ @param parameters 변수 (기본은 nil)
  @param multipartFormData multipart form 데이터
  @param method 메서드
  @param encoding 인코딩
@@ -106,7 +108,8 @@
 
 /** 네트워크통신 요청 (JSON)
  @param url URL
- @param parameters 변수
+ @param headers 헤더 (기본은 nil)
+ @param parameters 변수 (기본은 nil)
  @param method 메서드
  @param encoding 인코딩
  @param success 네트워크통신 성공시 핸들러
