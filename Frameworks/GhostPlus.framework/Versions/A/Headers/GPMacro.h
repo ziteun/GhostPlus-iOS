@@ -18,6 +18,11 @@
 #define IS_OS_8_OR_LATER	([[[UIDevice currentDevice] systemVersion] floatValue] >= 8.0)
 #define IS_OS_9_OR_LATER	([[[UIDevice currentDevice] systemVersion] floatValue] >= 9.0)
 #define IS_OS_10_OR_LATER	([[[UIDevice currentDevice] systemVersion] floatValue] >= 10.0)
+#define IS_OS_11_OR_LATER	([[[UIDevice currentDevice] systemVersion] floatValue] >= 11.0)
+#define IS_OS_12_OR_LATER	([[[UIDevice currentDevice] systemVersion] floatValue] >= 12.0)
+#define IS_OS_13_OR_LATER	([[[UIDevice currentDevice] systemVersion] floatValue] >= 13.0)
+#define IS_OS_14_OR_LATER	([[[UIDevice currentDevice] systemVersion] floatValue] >= 14.0)
+#define IS_OS_15_OR_LATER	([[[UIDevice currentDevice] systemVersion] floatValue] >= 15.0)
 
 // Log
 #define PrintBool(x) (((x) == YES) ? @"YES" : @"NO")
