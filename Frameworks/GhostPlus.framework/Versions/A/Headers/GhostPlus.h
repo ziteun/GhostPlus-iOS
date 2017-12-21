@@ -53,8 +53,8 @@
 #import <AFNetworking/AFNetworking.h>
 
 // Constans
-#define GHOSTPLUS_VERSION           @"2.19";
-#define GHOSTPLUS_BUILD_VERSION     @"219";
+#define GHOSTPLUS_VERSION           @"2.20";
+#define GHOSTPLUS_BUILD_VERSION     @"220";
 
 /**
  GhostPlus 메인클래스
