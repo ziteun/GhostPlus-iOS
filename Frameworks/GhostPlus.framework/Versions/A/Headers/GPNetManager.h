@@ -117,6 +117,17 @@
  */
 - (void)requestJSONWithURL:(NSString *)url headers:(NSDictionary *)headers parameters:(NSDictionary *)parameters method:(NSString *)method encoding:(NSInteger)encoding success:(void (^)(NSURLSessionDataTask *task, NSDictionary *json))success failure:(void (^)(NSURLSessionDataTask *task, NSError *error))failure;
 
+/** 네트워크통신 요청 (JSON)
+ @param url URL
+ @param headers 헤더 (기본은 nil)
+ @param parameters 변수 (기본은 nil)
+ @param method 메서드
+ @param encoding 인코딩
+ @param success 네트워크통신 성공시 핸들러
+ @param failure 네트워크통신 실패시 핸들러
+ */
+- (void)requestJSONWithURL:(NSString *)url headers:(NSDictionary *)headers parameters:(NSDictionary *)parameters method:(NSString *)method encoding:(NSInteger)encoding useJSONRequestSerializer:(BOOL)useJSONRequestSerializer success:(void (^)(NSURLSessionDataTask *task, NSDictionary *json))success failure:(void (^)(NSURLSessionDataTask *task, NSError *error))failure;
+
 // TODO: 개발중
 //- (void)downloadFileWithURL:(NSString *)url;
 
