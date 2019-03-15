@@ -31,16 +31,6 @@
 
 /** 아이폰 체크 */
 - (BOOL)isDeviceiPhone;
-/** 아이폰4 사이즈 체크 */
-- (BOOL)isDeviceiPhone4;
-/** 아이폰5 사이즈 체크 */
-- (BOOL)isDeviceiPhone5;
-/** 아이폰6 사이즈 체크 */
-- (BOOL)isDeviceiPhone6;
-/** 아이폰6플러스 사이즈 체크 */
-- (BOOL)isDeviceiPhone6Plus;
-/** 아이폰X 사이즈 체크 */
-- (BOOL)isDeviceiPhoneX;
 /** 아이패드 체크 */
 - (BOOL)isDeviceiPad;
 /** 레티나 2x 체크 */
