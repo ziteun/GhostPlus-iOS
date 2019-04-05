@@ -21,20 +21,8 @@
 - (NSString *)URLEncode;
 
 /**
- URL 인코딩
- @param encoding 문자열인코딩
- */
-- (NSString *)URLEncodeUsingEncoding:(NSStringEncoding)encoding;
-
-/**
  URL 디코딩
  */
 - (NSString *)URLDecode;
-
-/**
- URL 디코딩
- @param encoding 문자열인코딩
- */
-- (NSString *)URLDecodeUsingEncoding:(NSStringEncoding)encoding;
 
 @end
