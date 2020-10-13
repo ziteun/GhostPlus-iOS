@@ -4,7 +4,8 @@
 //
 //  Created by VANSTUDIO
 //  Copyright (c) 2014년 GhostCorps. All rights reserved.
-//
+//  Modified by David Chun 2020
+
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
@@ -53,8 +54,8 @@
 #import <AFNetworking/AFNetworking.h>
 
 // Constans
-#define GHOSTPLUS_VERSION           @"2.24";
-#define GHOSTPLUS_BUILD_VERSION     @"224";
+#define GHOSTPLUS_VERSION           @"2.30";
+#define GHOSTPLUS_BUILD_VERSION     @"230";
 
 /**
  GhostPlus 메인클래스

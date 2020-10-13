@@ -4,6 +4,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <WebKit/WebKit.h>
 
 /**
  웹뷰 매니저
@@ -109,7 +110,8 @@
  @param navigationType 네비게이션 타입
  @return 해당되는 스킴이 없으면 'YES'
  */
-- (BOOL)reviewForPaymentWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType;
+- (BOOL)reviewForPaymentWithRequest:(NSURLRequest *)request;
+
 - (BOOL)reviewForPaymentWithURL:(NSURL *)url;
 
 /**
@@ -118,7 +120,7 @@
  @param navigationType 네비게이션 타입
  @return 해당되는 스킴이 없으면 'YES'
  */
-- (BOOL)reviewForAppstoreWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType;
+- (BOOL)reviewForAppstoreWithRequest:(NSURLRequest *)request ;
 - (BOOL)reviewForAppstoreWithURL:(NSURL *)url;
 
 /**
@@ -127,7 +129,7 @@
  @param navigationType 네비게이션 타입
  @return 해당되는 스킴이 없으면 'YES'
  */
-- (BOOL)reviewForTelWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType;
+- (BOOL)reviewForTelWithRequest:(NSURLRequest *)request ;
 - (BOOL)reviewForTelWithURL:(NSURL *)url;
 
 /**
@@ -136,12 +138,12 @@
  @param navigationType 네비게이션 타입
  @return 해당되는 스킴이 없으면 'YES'
  */
-- (BOOL)reviewForEmailWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType;
+- (BOOL)reviewForEmailWithRequest:(NSURLRequest *)request ;
 - (BOOL)reviewForEmailWithURL:(NSURL *)url;
 
 /**
  웹뷰 롱프레스 제스쳐 비활성화
  */
-- (void)disableLongPressGesturesWithWebView:(UIWebView *)webview;
+- (void)disableLongPressGesturesWithWebView:(WKWebView *)webview;
 
 @end
