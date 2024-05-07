@@ -24,7 +24,8 @@ Pod::Spec.new do |s|
   s.preserve_paths = []
   s.header_dir = 'GhostPlus'
 
-  s.frameworks = ['GhostPlus', 'Foundation', 'UIKit', 'AssetsLibrary', 'AVFoundation', 'CoreMotion', 'CoreTelephony', 'MobileCoreServices', 'Security', 'SystemConfiguration', 'ImageIO', 'Photos']
+  # s.frameworks = ['GhostPlus', 'Foundation', 'UIKit', 'AssetsLibrary', 'AVFoundation', 'CoreMotion', 'CoreTelephony', 'MobileCoreServices', 'Security', 'SystemConfiguration', 'ImageIO', 'Photos']
+  s.frameworks = ['GhostPlus']
   #s.libraries = ['stdc++', 'z']
   
   #s.xcconfig = { 'FRAMEWORK_SEARCH_PATHS' => '"$(PODS_ROOT)/TestGhostPlus"' }
