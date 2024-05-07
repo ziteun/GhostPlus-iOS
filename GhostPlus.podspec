@@ -16,16 +16,17 @@ Pod::Spec.new do |s|
   #s.source           = { :http => 'http://developer.ghostplus.com/project/ghostplus_ios/GhostPlus-1.00.tar.gz', :flatten => true }
   # s.source       = { :git => "https://github.com/vanstudio/GhostPlus-iOS.git", :tag => @version }
   s.source       = { :git => "https://github.com/ziteun/GhostPlus-iOS.git", :tag => @version }
-  s.resource_bundles = { 'GhostPlus' => ['Resource/PrivacyInfo.xcprivacy'] }
+  s.source_files  = ["Sources/**/*.swift"]
+  s.resource_bundles = {"GhostPlus" => ["Sources/PrivacyInfo.xcprivacy"]}
   
-  s.source_files = []
-  s.resources = []
+  # s.source_files = []
+  # s.resources = []
   
-  s.preserve_paths = []
+  # s.preserve_paths = []
   s.header_dir = 'GhostPlus'
 
   # s.frameworks = ['GhostPlus', 'Foundation', 'UIKit', 'AssetsLibrary', 'AVFoundation', 'CoreMotion', 'CoreTelephony', 'MobileCoreServices', 'Security', 'SystemConfiguration', 'ImageIO', 'Photos']
-  s.frameworks = ['GhostPlus']
+  # s.frameworks = ['GhostPlus']
   #s.libraries = ['stdc++', 'z']
   
   #s.xcconfig = { 'FRAMEWORK_SEARCH_PATHS' => '"$(PODS_ROOT)/TestGhostPlus"' }
