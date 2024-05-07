@@ -1,5 +1,5 @@
 {
-	"source.white.list": [],
-	"source.black.list": ["github.com"],
-	"api.template.url": "https://raw.githubusercontent.com/ymoyao/cocoapods-privacy/main/resources/NSPrivacyAccessedAPITypes.plist"
+	"source.white.list": ["https://github.com/ziteun/GhostPlus-iOS"],
+	"source.black.list": ["https://github.com/jsonmodel/jsonmodel", "https://github.com/IGAWorksDev/AdBrix-iOS", "https://github.com/facebook/facebook-ios-sdk", "https://github.com/twitter-archive/twitter-kit-ios", "https://github.com/zekunyan/TTGTagCollectionView", "https://github.com/SnapKit/Masonry", "https://github.com/scalessec/Toast", "https://dl.google.com/firebase/ios/analytics/bd3f5143b022c59a/GoogleAnalytics-3.23.0.tar.gz", "https://github.com/AFNetworking/AFNetworking"],
+	"api.template.url": "https://raw.githubusercontent.com/ziteun/GhostPlus-iOS/master/NSPrivacyAccessedAPITypes.plist"
 }
