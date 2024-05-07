@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #s.source           = { :http => 'http://developer.ghostplus.com/project/ghostplus_ios/GhostPlus-1.00.tar.gz', :flatten => true }
   # s.source       = { :git => "https://github.com/vanstudio/GhostPlus-iOS.git", :tag => @version }
   s.source       = { :git => "https://github.com/ziteun/GhostPlus-iOS.git", :tag => @version }
-  s.resource_bundles = { 'GhostPlus' => ['GhostPlus-iOS/PrivacyInfo.xcprivacy'] }
+  s.resource_bundles = { 'GhostPlus' => ['Resource/PrivacyInfo.xcprivacy'] }
   
   s.source_files = []
   s.resources = []
